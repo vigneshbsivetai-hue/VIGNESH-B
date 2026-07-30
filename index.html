@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Department Profile</title>
+  <title>Department Profile - Department of AI</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Google Fonts: Serif for University Titles, Modern Sans for Body -->
+  <!-- Google Fonts: Serif for Titles, Sans for Body -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
     
@@ -21,13 +21,13 @@
     ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #a8a29e; }
 
-    /* Elegant Transitions */
-    .nav-btn { transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+    /* Transitions */
+    .nav-btn { transition: all 0.2s ease-in-out; }
   </style>
 </head>
 <body class="bg-[#fcfbf9] text-stone-900 antialiased h-screen flex flex-col overflow-hidden">
 
-  <!-- TOP UNIVERSITY HEADER BAR -->
+  <!-- HEADER -->
   <header class="bg-gradient-to-r from-[#3b0764] via-[#4c0519] to-[#2e0210] text-white shrink-0 border-b-2 border-amber-500/60 shadow-xl z-20">
     <div class="px-8 py-5 flex items-center justify-center text-center">
       <div>
@@ -41,441 +41,292 @@
     </div>
   </header>
 
-  <!-- MAIN CONTAINER -->
+  <!-- MAIN WRAPPER -->
   <div class="flex-1 flex overflow-hidden">
 
-    <!-- LEFT SIDEBAR NAVIGATION -->
+    <!-- LEFT SIDEBAR -->
     <aside class="w-80 lg:w-96 bg-[#f7f5f0] border-r border-stone-300/70 flex flex-col shrink-0 shadow-inner z-10">
 
       <!-- Search Bar -->
       <div class="p-4 border-b border-stone-200 bg-[#efece6]">
         <div class="relative">
           <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400"></i>
-          <input type="text" id="menu-search" onkeyup="filterMenu()" placeholder="Search academic index..." class="w-full pl-10 pr-3 py-2 text-xs bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600 shadow-sm placeholder:text-stone-400">
+          <input type="text" id="menu-search" onkeyup="filterMenu()" placeholder="Search navigation..." class="w-full pl-10 pr-3 py-2 text-xs bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600 shadow-sm placeholder:text-stone-400">
         </div>
       </div>
 
-      <!-- Navigation List -->
+      <!-- Navigation Menu -->
       <nav class="flex-1 overflow-y-auto p-3 space-y-1" id="sidebar-menu">
         
-        <!-- SECTION 1 BANNER -->
+        <!-- SECTION 1 -->
         <div class="section-banner my-2 px-3 py-2 bg-[#3b0764] rounded-md text-amber-300 font-serif-academic font-bold text-[11px] tracking-widest uppercase flex items-center justify-between border-l-4 border-amber-400 shadow-sm">
           <span class="flex items-center gap-2">
-            <i data-lucide="quote" class="w-3.5 h-3.5 text-amber-400"></i>
-            HOD's Executive Message
+            <i data-lucide="bookmark" class="w-3.5 h-3.5 text-amber-400"></i>
+            Section Group 1
           </span>
         </div>
 
-        <button onclick="switchTab(event, 'vision-mission')" class="nav-btn active text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-semibold bg-white text-[#4c0519] border border-amber-500/40 flex items-center justify-between group shadow-sm">
+        <button onclick="switchTab(1)" id="btn-page-1" class="nav-btn active text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-bold bg-white text-[#4c0519] border border-amber-500/40 flex items-center justify-between shadow-sm">
           <div class="flex items-center gap-3 truncate">
-            <span class="w-6 h-6 rounded bg-[#4c0519] text-amber-300 flex items-center justify-center shrink-0 font-serif-academic font-bold text-[11px] border border-amber-400/30">I</span>
-            <span class="truncate font-bold">Vision & Mission Statement</span>
+            <span class="w-6 h-6 rounded bg-[#4c0519] text-amber-300 flex items-center justify-center shrink-0 font-serif-academic font-bold text-xs border border-amber-400/30">1</span>
+            <span class="truncate">Vision & Mission Statement</span>
           </div>
           <i data-lucide="chevron-right" class="w-4 h-4 text-amber-600 shrink-0"></i>
         </button>
 
-        <button onclick="switchTab(event, 'history')" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 hover:text-stone-900 flex items-center justify-between group">
+        <button onclick="switchTab(2)" id="btn-page-2" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 flex items-center justify-between">
           <div class="flex items-center gap-3 truncate">
-            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-[11px]">II</span>
+            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-xs">2</span>
             <span class="truncate">History of the Department</span>
           </div>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 group-hover:opacity-100 shrink-0 transition"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 shrink-0 transition"></i>
         </button>
 
-        <button onclick="switchTab(event, 'classrooms')" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 hover:text-stone-900 flex items-center justify-between group">
+        <button onclick="switchTab(3)" id="btn-page-3" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 flex items-center justify-between">
           <div class="flex items-center gap-3 truncate">
-            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-[11px]">III</span>
+            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-xs">3</span>
             <span class="truncate">Classrooms Area & Capacity</span>
           </div>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 group-hover:opacity-100 shrink-0 transition"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 shrink-0 transition"></i>
         </button>
 
-        <button onclick="switchTab(event, 'strength')" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 hover:text-stone-900 flex items-center justify-between group">
+        <button onclick="switchTab(4)" id="btn-page-4" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 flex items-center justify-between">
           <div class="flex items-center gap-3 truncate">
-            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-[11px]">IV</span>
+            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-xs">4</span>
             <span class="truncate">Student Strength</span>
           </div>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 group-hover:opacity-100 shrink-0 transition"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 shrink-0 transition"></i>
         </button>
 
-        <button onclick="switchTab(event, 'labs')" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 hover:text-stone-900 flex items-center justify-between group">
+        <button onclick="switchTab(5)" id="btn-page-5" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 flex items-center justify-between">
           <div class="flex items-center gap-3 truncate">
-            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-[11px]">V</span>
+            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-xs">5</span>
             <span class="truncate">Laboratory Specification</span>
           </div>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 group-hover:opacity-100 shrink-0 transition"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 shrink-0 transition"></i>
         </button>
 
-        <!-- SECTION 2 BANNER -->
+        <!-- SECTION 2 -->
         <div class="section-banner mt-6 mb-2 px-3 py-2 bg-[#3b0764] rounded-md text-amber-300 font-serif-academic font-bold text-[11px] tracking-widest uppercase flex items-center justify-between border-l-4 border-amber-400 shadow-sm">
           <span class="flex items-center gap-2">
-            <i data-lucide="file-text" class="w-3.5 h-3.5 text-amber-400"></i>
-            Annual Institutional Dossier
+            <i data-lucide="folder-open" class="w-3.5 h-3.5 text-amber-400"></i>
+            Section Group 2
           </span>
         </div>
 
-        <button onclick="switchTab(event, 'about-dept')" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 hover:text-stone-900 flex items-center justify-between group">
+        <button onclick="switchTab(6)" id="btn-page-6" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 flex items-center justify-between">
           <div class="flex items-center gap-3 truncate">
-            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-[11px]">VI</span>
+            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-xs">6</span>
             <span class="truncate">About the Department</span>
           </div>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 group-hover:opacity-100 shrink-0 transition"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 shrink-0 transition"></i>
         </button>
 
-        <button onclick="switchTab(event, 'admission')" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 hover:text-stone-900 flex items-center justify-between group">
+        <button onclick="switchTab(7)" id="btn-page-7" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 flex items-center justify-between">
           <div class="flex items-center gap-3 truncate">
-            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-[11px]">VII</span>
+            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-xs">7</span>
             <span class="truncate">Admission Criteria</span>
           </div>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 group-hover:opacity-100 shrink-0 transition"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 shrink-0 transition"></i>
         </button>
 
-        <button onclick="switchTab(event, 'faculty')" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 hover:text-stone-900 flex items-center justify-between group">
+        <button onclick="switchTab(8)" id="btn-page-8" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 flex items-center justify-between">
           <div class="flex items-center gap-3 truncate">
-            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-[11px]">VIII</span>
+            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-xs">8</span>
             <span class="truncate">Faculty Details</span>
           </div>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 group-hover:opacity-100 shrink-0 transition"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 shrink-0 transition"></i>
         </button>
 
-        <button onclick="switchTab(event, 'participation')" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 hover:text-stone-900 flex items-center justify-between group">
+        <button onclick="switchTab(9)" id="btn-page-9" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 flex items-center justify-between">
           <div class="flex items-center gap-3 truncate">
-            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-[11px]">IX</span>
+            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-xs">9</span>
             <span class="truncate">Student Participation</span>
           </div>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 group-hover:opacity-100 shrink-0 transition"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 shrink-0 transition"></i>
         </button>
 
-        <button onclick="switchTab(event, 'dept-activities')" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 hover:text-stone-900 flex items-center justify-between group">
+        <button onclick="switchTab(10)" id="btn-page-10" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 flex items-center justify-between">
           <div class="flex items-center gap-3 truncate">
-            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-[11px]">X</span>
+            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-xs">10</span>
             <span class="truncate">Department Activities (DAB)</span>
           </div>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 group-hover:opacity-100 shrink-0 transition"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 shrink-0 transition"></i>
         </button>
 
-        <button onclick="switchTab(event, 'research')" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 hover:text-stone-900 flex items-center justify-between group">
+        <button onclick="switchTab(11)" id="btn-page-11" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 flex items-center justify-between">
           <div class="flex items-center gap-3 truncate">
-            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-[11px]">XI</span>
+            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-xs">11</span>
             <span class="truncate">Faculty Research Contribution</span>
           </div>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 group-hover:opacity-100 shrink-0 transition"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 shrink-0 transition"></i>
         </button>
 
-        <button onclick="switchTab(event, 'placements')" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 hover:text-stone-900 flex items-center justify-between group">
+        <button onclick="switchTab(12)" id="btn-page-12" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 flex items-center justify-between">
           <div class="flex items-center gap-3 truncate">
-            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-[11px]">XII</span>
+            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-xs">12</span>
             <span class="truncate">Higher Education & Placement</span>
           </div>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 group-hover:opacity-100 shrink-0 transition"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 shrink-0 transition"></i>
         </button>
 
-        <button onclick="switchTab(event, 'timetable')" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 hover:text-stone-900 flex items-center justify-between group">
+        <button onclick="switchTab(13)" id="btn-page-13" class="nav-btn text-left w-full px-3.5 py-2.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200/60 flex items-center justify-between">
           <div class="flex items-center gap-3 truncate">
-            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-[11px]">XIII</span>
+            <span class="w-6 h-6 rounded bg-stone-300/60 text-stone-700 flex items-center justify-center shrink-0 font-serif-academic font-bold text-xs">13</span>
             <span class="truncate">Master Academic Time Table</span>
           </div>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 group-hover:opacity-100 shrink-0 transition"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 opacity-0 shrink-0 transition"></i>
         </button>
 
       </nav>
     </aside>
 
-    <!-- RIGHT PANEL: MAIN CONTENT -->
+    <!-- RIGHT CONTENT AREA -->
     <main class="flex-1 overflow-y-auto p-8 lg:p-12 bg-[#fcfbf9]">
-      <div class="max-w-5xl mx-auto space-y-10">
+      <div class="max-w-4xl mx-auto">
 
-        <!-- METRICS SUMMARY BAR -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
-          
-          <div class="bg-white p-5 rounded-xl border border-amber-900/10 shadow-md shadow-stone-200/50 flex items-center gap-4 relative overflow-hidden group hover:border-amber-500/40 transition">
-            <div class="w-12 h-12 rounded-lg bg-[#4c0519]/10 text-[#4c0519] flex items-center justify-center shrink-0 border border-[#4c0519]/20">
-              <i data-lucide="users" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <p class="text-[10px] font-bold text-stone-400 uppercase tracking-widest font-serif-academic">Enrolled Scholars</p>
-              <p class="text-2xl font-black text-stone-900 font-serif-academic mt-0.5">465</p>
-            </div>
-            <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-amber-500/10 to-transparent pointer-events-none"></div>
-          </div>
-
-          <div class="bg-white p-5 rounded-xl border border-amber-900/10 shadow-md shadow-stone-200/50 flex items-center gap-4 relative overflow-hidden group hover:border-amber-500/40 transition">
-            <div class="w-12 h-12 rounded-lg bg-amber-500/10 text-amber-700 flex items-center justify-center shrink-0 border border-amber-500/20">
-              <i data-lucide="award" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <p class="text-[10px] font-bold text-stone-400 uppercase tracking-widest font-serif-academic">Tenured Chair Faculty</p>
-              <p class="text-2xl font-black text-stone-900 font-serif-academic mt-0.5">28 PhDs</p>
-            </div>
-            <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-amber-500/10 to-transparent pointer-events-none"></div>
-          </div>
-
-          <div class="bg-white p-5 rounded-xl border border-amber-900/10 shadow-md shadow-stone-200/50 flex items-center gap-4 relative overflow-hidden group hover:border-amber-500/40 transition">
-            <div class="w-12 h-12 rounded-lg bg-[#3b0764]/10 text-[#3b0764] flex items-center justify-center shrink-0 border border-[#3b0764]/20">
-              <i data-lucide="cpu" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <p class="text-[10px] font-bold text-stone-400 uppercase tracking-widest font-serif-academic">AI Supercomputing Hubs</p>
-              <p class="text-2xl font-black text-stone-900 font-serif-academic mt-0.5">6 Labs</p>
-            </div>
-            <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-amber-500/10 to-transparent pointer-events-none"></div>
-          </div>
-
-          <div class="bg-white p-5 rounded-xl border border-amber-900/10 shadow-md shadow-stone-200/50 flex items-center gap-4 relative overflow-hidden group hover:border-amber-500/40 transition">
-            <div class="w-12 h-12 rounded-lg bg-emerald-900/10 text-emerald-800 flex items-center justify-center shrink-0 border border-emerald-900/20">
-              <i data-lucide="book-open" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <p class="text-[10px] font-bold text-stone-400 uppercase tracking-widest font-serif-academic">Research Index</p>
-              <p class="text-2xl font-black text-stone-900 font-serif-academic mt-0.5">140+ Citations</p>
-            </div>
-            <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-amber-500/10 to-transparent pointer-events-none"></div>
-          </div>
-
-        </div>
-
-        <!-- CONTENT PANEL 1: VISION & MISSION -->
-        <div id="content-vision-mission" class="content-panel space-y-6">
-          <div class="border-b border-stone-300 pb-4 flex justify-between items-end">
-            <div>
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
-                <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Charter Document • Section I</span>
-              </div>
-              <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">Institutional Vision & Strategic Mission</h2>
-            </div>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-md relative overflow-hidden">
-              <div class="w-1.5 h-full bg-[#4c0519] absolute left-0 top-0"></div>
-              <div class="flex items-center gap-4 mb-4">
-                <div class="p-3 rounded-lg bg-[#4c0519] text-amber-300 shadow-sm">
-                  <i data-lucide="eye" class="w-6 h-6"></i>
-                </div>
-                <h3 class="font-serif-academic font-bold text-stone-900 text-xl">Departmental Vision</h3>
-              </div>
-              <p class="text-stone-600 text-sm leading-relaxed">
-                To stand at the apex of world-class academic research and ethical innovation in Artificial Intelligence—empowering leaders to architect responsible, transformative technology for the advancement of humanity.
-              </p>
-            </div>
-
-            <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-md relative overflow-hidden">
-              <div class="w-1.5 h-full bg-amber-500 absolute left-0 top-0"></div>
-              <div class="flex items-center gap-4 mb-4">
-                <div class="p-3 rounded-lg bg-amber-500 text-stone-950 shadow-sm">
-                  <i data-lucide="target" class="w-6 h-6"></i>
-                </div>
-                <h3 class="font-serif-academic font-bold text-stone-900 text-xl">Core Academic Mission</h3>
-              </div>
-              <ul class="text-stone-600 text-sm space-y-3 leading-relaxed">
-                <li class="flex items-start gap-2.5">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 mt-1 shrink-0"></i>
-                  Cultivate advanced multi-disciplinary research in neural computing and intelligence models.
-                </li>
-                <li class="flex items-start gap-2.5">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 mt-1 shrink-0"></i>
-                  Maintain state-of-the-art supercomputing infrastructure in tandem with global industry leaders.
-                </li>
-                <li class="flex items-start gap-2.5">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 mt-1 shrink-0"></i>
-                  Embed rigorous ethical frameworks, scientific integrity, and societal responsibility.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- CONTENT ITEM 2: HISTORY -->
-        <div id="content-history" class="content-panel hidden space-y-6">
+        <!-- DYNAMIC CONTENT PANELS (1 TO 13) -->
+        
+        <!-- PAGE 1 -->
+        <div id="page-1" class="page-content space-y-6">
           <div class="border-b border-stone-300 pb-4">
-            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Charter Document • Section II</span>
-            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">History of the Department</h2>
+            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Index • 1</span>
+            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">PAGE 1</h2>
           </div>
-          <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-md space-y-4 text-sm text-stone-600 leading-relaxed">
-            <p>Founded to spearhead foundational research in computational intelligence and cognitive sciences, the Department of Artificial Intelligence remains a premier seat of higher learning.</p>
-            <p>Over decades of academic leadership, our faculty and alumni have continually redefined breakthroughs in machine learning, autonomous systems, and advanced natural language processing across international domains.</p>
+          <div class="p-12 border-2 border-dashed border-stone-300 rounded-xl bg-white/50 text-center text-stone-400">
+            <p class="font-medium">Ready for updates on Page 1.</p>
           </div>
         </div>
 
-        <!-- CONTENT ITEM 3: CLASSROOMS -->
-        <div id="content-classrooms" class="content-panel hidden space-y-6">
+        <!-- PAGE 2 -->
+        <div id="page-2" class="page-content hidden space-y-6">
           <div class="border-b border-stone-300 pb-4">
-            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Charter Document • Section III</span>
-            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">Academic Facilities & Infrastructure</h2>
+            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Index • 2</span>
+            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">PAGE 2</h2>
           </div>
-          <div class="bg-white rounded-xl border border-stone-200 shadow-md overflow-hidden">
-            <table class="w-full text-left text-sm text-stone-700">
-              <thead class="bg-[#3b0764] text-amber-300 text-xs font-serif-academic uppercase tracking-wider">
-                <tr><th class="p-4">Facility Type</th><th class="p-4">Count</th><th class="p-4">Floor Area</th><th class="p-4">Integrated Audio/Visual Infrastructure</th></tr>
-              </thead>
-              <tbody class="divide-y divide-stone-100">
-                <tr class="hover:bg-stone-50"><td class="p-4 font-bold text-stone-900 font-serif-academic">Tier-1 Amphitheater Lecture Halls</td><td class="p-4">6 Halls</td><td class="p-4">1,800 sq.ft ea.</td><td class="p-4 text-stone-800 font-medium">Smart Interactive Displays & AV Matrix</td></tr>
-                <tr class="hover:bg-stone-50"><td class="p-4 font-bold text-stone-900 font-serif-academic">Grand Academic Auditorium</td><td class="p-4">2 Complexes</td><td class="p-4">4,200 sq.ft</td><td class="p-4 text-stone-800 font-medium">Conferencing Mesh & Surround Audio Engine</td></tr>
-              </tbody>
-            </table>
+          <div class="p-12 border-2 border-dashed border-stone-300 rounded-xl bg-white/50 text-center text-stone-400">
+            <p class="font-medium">Ready for updates on Page 2.</p>
           </div>
         </div>
 
-        <!-- CONTENT ITEM 4: STUDENT STRENGTH -->
-        <div id="content-strength" class="content-panel hidden space-y-6">
+        <!-- PAGE 3 -->
+        <div id="page-3" class="page-content hidden space-y-6">
           <div class="border-b border-stone-300 pb-4">
-            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Charter Document • Section IV</span>
-            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">Student Body Distribution</h2>
+            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Index • 3</span>
+            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">PAGE 3</h2>
           </div>
-          <div class="grid grid-cols-3 gap-6">
-            <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-md text-center">
-              <p class="text-4xl font-extrabold text-[#4c0519] font-serif-academic">360</p>
-              <p class="text-xs font-bold text-stone-500 uppercase font-serif-academic tracking-wider mt-2">B.S. Artificial Intelligence</p>
-            </div>
-            <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-md text-center">
-              <p class="text-4xl font-extrabold text-amber-700 font-serif-academic">80</p>
-              <p class="text-xs font-bold text-stone-500 uppercase font-serif-academic tracking-wider mt-2">M.S. Cognitive Systems</p>
-            </div>
-            <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-md text-center">
-              <p class="text-4xl font-extrabold text-emerald-800 font-serif-academic">25</p>
-              <p class="text-xs font-bold text-stone-500 uppercase font-serif-academic tracking-wider mt-2">Ph.D. Research Fellows</p>
-            </div>
+          <div class="p-12 border-2 border-dashed border-stone-300 rounded-xl bg-white/50 text-center text-stone-400">
+            <p class="font-medium">Ready for updates on Page 3.</p>
           </div>
         </div>
 
-        <!-- CONTENT ITEM 5: LABS -->
-        <div id="content-labs" class="content-panel hidden space-y-6">
+        <!-- PAGE 4 -->
+        <div id="page-4" class="page-content hidden space-y-6">
           <div class="border-b border-stone-300 pb-4">
-            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Charter Document • Section V</span>
-            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">Advanced Laboratory Specifications</h2>
+            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Index • 4</span>
+            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">PAGE 4</h2>
           </div>
-          <div class="bg-white rounded-xl border border-stone-200 shadow-md overflow-hidden">
-            <table class="w-full text-left text-sm text-stone-700">
-              <thead class="bg-[#3b0764] text-amber-300 text-xs font-serif-academic uppercase tracking-wider">
-                <tr><th class="p-4">Laboratory Unit</th><th class="p-4">Capacity</th><th class="p-4">Hardware Compute Specs</th></tr>
-              </thead>
-              <tbody class="divide-y divide-stone-100">
-                <tr class="hover:bg-stone-50"><td class="p-4 font-bold text-stone-900 font-serif-academic">Exascale Deep Learning Cluster Lab</td><td class="p-4">40 Workstations</td><td class="p-4">NVIDIA RTX A6000 GPUs, Enterprise Mesh</td></tr>
-                <tr class="hover:bg-stone-50"><td class="p-4 font-bold text-stone-900 font-serif-academic">Robotics & Autonomous Perception Center</td><td class="p-4">30 Workstations</td><td class="p-4">3D LiDAR Array, ROS2 Workstations, Jetson Nodes</td></tr>
-              </tbody>
-            </table>
+          <div class="p-12 border-2 border-dashed border-stone-300 rounded-xl bg-white/50 text-center text-stone-400">
+            <p class="font-medium">Ready for updates on Page 4.</p>
           </div>
         </div>
 
-        <!-- CONTENT ITEM 6: ABOUT DEPT -->
-        <div id="content-about-dept" class="content-panel hidden space-y-6">
+        <!-- PAGE 5 -->
+        <div id="page-5" class="page-content hidden space-y-6">
           <div class="border-b border-stone-300 pb-4">
-            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Charter Document • Section VI</span>
-            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">About the Department</h2>
+            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Index • 5</span>
+            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">PAGE 5</h2>
           </div>
-          <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-md text-sm text-stone-600 leading-relaxed">
-            Annual summary detailing departmental accreditation, national honors, distinguished chair faculty appointments, and state research endowments.
+          <div class="p-12 border-2 border-dashed border-stone-300 rounded-xl bg-white/50 text-center text-stone-400">
+            <p class="font-medium">Ready for updates on Page 5.</p>
           </div>
         </div>
 
-        <!-- CONTENT ITEM 7: ADMISSION -->
-        <div id="content-admission" class="content-panel hidden space-y-6">
+        <!-- PAGE 6 -->
+        <div id="page-6" class="page-content hidden space-y-6">
           <div class="border-b border-stone-300 pb-4">
-            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Charter Document • Section VII</span>
-            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">Admission Qualifications</h2>
+            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Index • 6</span>
+            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">PAGE 6</h2>
           </div>
-          <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-md text-sm text-stone-600 space-y-3">
-            <p><strong>Undergraduate Selection:</strong> National competitive entrance merit ranking and scholastic assessment.</p>
-            <p><strong>Graduate & Doctoral Selection:</strong> GRE / GATE scores, academic dossier review, and departmental panel defense.</p>
+          <div class="p-12 border-2 border-dashed border-stone-300 rounded-xl bg-white/50 text-center text-stone-400">
+            <p class="font-medium">Ready for updates on Page 6.</p>
           </div>
         </div>
 
-        <!-- CONTENT ITEM 8: FACULTY -->
-        <div id="content-faculty" class="content-panel hidden space-y-6">
+        <!-- PAGE 7 -->
+        <div id="page-7" class="page-content hidden space-y-6">
           <div class="border-b border-stone-300 pb-4">
-            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Charter Document • Section VIII</span>
-            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">Distinguished Faculty Chair</h2>
+            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Index • 7</span>
+            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">PAGE 7</h2>
           </div>
-          <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-md text-sm text-stone-600">
-            Register of 28 tenured faculty members holding PhDs from premier universities worldwide, specializing in Generative AI, Neural Engineering, Computer Vision, and Computational Logic.
+          <div class="p-12 border-2 border-dashed border-stone-300 rounded-xl bg-white/50 text-center text-stone-400">
+            <p class="font-medium">Ready for updates on Page 7.</p>
           </div>
         </div>
 
-        <!-- CONTENT ITEM 9: STUDENT PARTICIPATION -->
-        <div id="content-participation" class="content-panel hidden space-y-6">
+        <!-- PAGE 8 -->
+        <div id="page-8" class="page-content hidden space-y-6">
           <div class="border-b border-stone-300 pb-4">
-            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Charter Document • Section IX</span>
-            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">Student Academic Honors</h2>
+            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Index • 8</span>
+            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">PAGE 8</h2>
           </div>
-          <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-md text-sm text-stone-600">
-            Records of international hackathon awards, student co-authored publications in IEEE/ACM journals, and research fellowships.
+          <div class="p-12 border-2 border-dashed border-stone-300 rounded-xl bg-white/50 text-center text-stone-400">
+            <p class="font-medium">Ready for updates on Page 8.</p>
           </div>
         </div>
 
-        <!-- CONTENT ITEM 10: DEPT ACTIVITIES -->
-        <div id="content-dept-activities" class="content-panel hidden space-y-6">
+        <!-- PAGE 9 -->
+        <div id="page-9" class="page-content hidden space-y-6">
           <div class="border-b border-stone-300 pb-4">
-            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Charter Document • Section X</span>
-            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">Academic Board Minutes & DAB</h2>
+            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Index • 9</span>
+            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">PAGE 9</h2>
           </div>
-          <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-md text-sm text-stone-600">
-            Proceedings from the Department Advisory Board (DAB), visiting scholar lectures, international symposia, and interdisciplinary workshops.
+          <div class="p-12 border-2 border-dashed border-stone-300 rounded-xl bg-white/50 text-center text-stone-400">
+            <p class="font-medium">Ready for updates on Page 9.</p>
           </div>
         </div>
 
-        <!-- CONTENT ITEM 11: RESEARCH -->
-        <div id="content-research" class="content-panel hidden space-y-6">
+        <!-- PAGE 10 -->
+        <div id="page-10" class="page-content hidden space-y-6">
           <div class="border-b border-stone-300 pb-4">
-            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Charter Document • Section XI</span>
-            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">Faculty Publications & Research Grants</h2>
+            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Index • 10</span>
+            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">PAGE 10</h2>
           </div>
-          <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-md text-sm text-stone-600">
-            Compendium of high-impact journal publications, international patents filed, consultancy projects, and multi-million-dollar research grants awarded.
+          <div class="p-12 border-2 border-dashed border-stone-300 rounded-xl bg-white/50 text-center text-stone-400">
+            <p class="font-medium">Ready for updates on Page 10.</p>
           </div>
         </div>
 
-        <!-- CONTENT ITEM 12: PLACEMENTS -->
-        <div id="content-placements" class="content-panel hidden space-y-6">
+        <!-- PAGE 11 -->
+        <div id="page-11" class="page-content hidden space-y-6">
           <div class="border-b border-stone-300 pb-4">
-            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Charter Document • Section XII</span>
-            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">Placement & Post-Graduate Outcome</h2>
+            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Index • 11</span>
+            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">PAGE 11</h2>
           </div>
-          <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-md text-sm text-stone-600">
-            98% career placement with global technology companies and research laboratories, alongside doctorates pursued at Ivy League tier institutions.
+          <div class="p-12 border-2 border-dashed border-stone-300 rounded-xl bg-white/50 text-center text-stone-400">
+            <p class="font-medium">Ready for updates on Page 11.</p>
           </div>
         </div>
 
-        <!-- CONTENT ITEM 13: MASTER TIMETABLE -->
-        <div id="content-timetable" class="content-panel hidden space-y-6">
-          <div class="border-b border-stone-300 pb-4 flex justify-between items-end">
-            <div>
-              <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Charter Document • Section XIII</span>
-              <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">Master Academic Time Table</h2>
-            </div>
-            <button class="bg-[#3b0764] hover:bg-[#2e0210] text-amber-300 font-serif-academic font-bold text-xs px-5 py-2.5 rounded-lg transition border border-amber-500/30 flex items-center gap-2 shadow-sm">
-              <i data-lucide="download" class="w-4 h-4"></i> Download PDF
-            </button>
+        <!-- PAGE 12 -->
+        <div id="page-12" class="page-content hidden space-y-6">
+          <div class="border-b border-stone-300 pb-4">
+            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Index • 12</span>
+            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">PAGE 12</h2>
           </div>
+          <div class="p-12 border-2 border-dashed border-stone-300 rounded-xl bg-white/50 text-center text-stone-400">
+            <p class="font-medium">Ready for updates on Page 12.</p>
+          </div>
+        </div>
 
-          <div class="overflow-x-auto bg-white rounded-xl border border-stone-200 shadow-md">
-            <table class="w-full text-xs text-left text-stone-700">
-              <thead class="bg-[#3b0764] text-amber-300 font-serif-academic uppercase text-[10px] tracking-wider">
-                <tr>
-                  <th class="py-4 px-5">Day</th>
-                  <th class="py-4 px-5">09:00 AM - 10:00 AM</th>
-                  <th class="py-4 px-5">10:00 AM - 11:00 AM</th>
-                  <th class="py-4 px-5">11:15 AM - 12:15 PM</th>
-                  <th class="py-4 px-5">02:00 PM - 04:00 PM</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-stone-100 font-medium">
-                <tr class="hover:bg-stone-50">
-                  <td class="py-4 px-5 font-bold font-serif-academic text-[#4c0519]">Monday</td>
-                  <td class="py-4 px-5">Advanced Neural Computing</td>
-                  <td class="py-4 px-5">Computer Vision Systems</td>
-                  <td class="py-4 px-5">Ethics & AI Policy</td>
-                  <td class="py-4 px-5 text-[#3b0764] font-bold">GPU Practical Session (Group A)</td>
-                </tr>
-                <tr class="hover:bg-stone-50">
-                  <td class="py-4 px-5 font-bold font-serif-academic text-[#4c0519]">Tuesday</td>
-                  <td class="py-4 px-5">Reinforcement Theory</td>
-                  <td class="py-4 px-5">Language Architectures</td>
-                  <td class="py-4 px-5">Cognitive Logic</td>
-                  <td class="py-4 px-5 text-[#3b0764] font-bold">Robotics Center Practicum (Group B)</td>
-                </tr>
-              </tbody>
-            </table>
+        <!-- PAGE 13 -->
+        <div id="page-13" class="page-content hidden space-y-6">
+          <div class="border-b border-stone-300 pb-4">
+            <span class="text-xs font-serif-academic font-bold text-[#4c0519] uppercase tracking-widest">Index • 13</span>
+            <h2 class="text-3xl font-serif-academic font-extrabold text-stone-900 mt-1">PAGE 13</h2>
+          </div>
+          <div class="p-12 border-2 border-dashed border-stone-300 rounded-xl bg-white/50 text-center text-stone-400">
+            <p class="font-medium">Ready for updates on Page 13.</p>
           </div>
         </div>
 
@@ -484,37 +335,35 @@
 
   </div>
 
-  <!-- JAVASCRIPT FOR INTERACTIVITY & SEARCH -->
+  <!-- JAVASCRIPT -->
   <script>
-    // Initialize Lucide Icons
+    // Initialize icons
     lucide.createIcons();
 
-    // Tab Switcher Function
-    function switchTab(e, tabId) {
-      // Hide all content panels
-      document.querySelectorAll('.content-panel').forEach(panel => {
-        panel.classList.add('hidden');
+    // Switch active page function
+    function switchTab(pageNum) {
+      // Hide all pages
+      document.querySelectorAll('.page-content').forEach(page => {
+        page.classList.add('hidden');
       });
 
-      // Show targeted panel
-      const targetPanel = document.getElementById('content-' + tabId);
-      if (targetPanel) {
-        targetPanel.classList.remove('hidden');
+      // Show selected page
+      const targetPage = document.getElementById('page-' + pageNum);
+      if (targetPage) {
+        targetPage.classList.remove('hidden');
       }
 
-      // Reset menu button styles
+      // Reset button styles
       document.querySelectorAll('.nav-btn').forEach(btn => {
         btn.classList.remove('bg-white', 'text-[#4c0519]', 'font-bold', 'border', 'border-amber-500/40', 'shadow-sm');
         btn.classList.add('text-stone-700', 'font-medium');
-        
-        // Reset Roman numeral badge
-        const numBadge = btn.querySelector('span');
-        if (numBadge) {
-          numBadge.classList.remove('bg-[#4c0519]', 'text-amber-300', 'border', 'border-amber-400/30');
-          numBadge.classList.add('bg-stone-300/60', 'text-stone-700');
+
+        const numSpan = btn.querySelector('span');
+        if (numSpan) {
+          numSpan.classList.remove('bg-[#4c0519]', 'text-amber-300', 'border', 'border-amber-400/30');
+          numSpan.classList.add('bg-stone-300/60', 'text-stone-700');
         }
 
-        // Reset chevron visibility
         const icon = btn.querySelector('[data-lucide="chevron-right"]');
         if (icon) {
           icon.classList.add('opacity-0');
@@ -522,15 +371,15 @@
       });
 
       // Highlight active button
-      if (e && e.currentTarget) {
-        const activeBtn = e.currentTarget;
+      const activeBtn = document.getElementById('btn-page-' + pageNum);
+      if (activeBtn) {
         activeBtn.classList.add('bg-white', 'text-[#4c0519]', 'font-bold', 'border', 'border-amber-500/40', 'shadow-sm');
         activeBtn.classList.remove('text-stone-700', 'font-medium');
 
-        const activeNumBadge = activeBtn.querySelector('span');
-        if (activeNumBadge) {
-          activeNumBadge.classList.remove('bg-stone-300/60', 'text-stone-700');
-          activeNumBadge.classList.add('bg-[#4c0519]', 'text-amber-300', 'border', 'border-amber-400/30');
+        const activeNum = activeBtn.querySelector('span');
+        if (activeNum) {
+          activeNum.classList.remove('bg-stone-300/60', 'text-stone-700');
+          activeNum.classList.add('bg-[#4c0519]', 'text-amber-300', 'border', 'border-amber-400/30');
         }
 
         const activeIcon = activeBtn.querySelector('[data-lucide="chevron-right"]');
@@ -540,7 +389,7 @@
       }
     }
 
-    // Filter Navigation Items via Search Bar
+    // Filter Menu Search
     function filterMenu() {
       const input = document.getElementById('menu-search').value.toLowerCase();
       const buttons = document.querySelectorAll('#sidebar-menu button');
@@ -548,14 +397,9 @@
 
       buttons.forEach(btn => {
         const text = btn.innerText.toLowerCase();
-        if (text.includes(input)) {
-          btn.style.display = 'flex';
-        } else {
-          btn.style.display = 'none';
-        }
+        btn.style.display = text.includes(input) ? 'flex' : 'none';
       });
 
-      // Hide headers when searching
       banners.forEach(banner => {
         banner.style.display = input ? 'none' : 'flex';
       });
