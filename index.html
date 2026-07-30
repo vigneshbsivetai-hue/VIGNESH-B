@@ -9,7 +9,7 @@
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
     body { font-family: 'Inter', sans-serif; }
     
     /* Custom scrollbar */
@@ -21,19 +21,12 @@
 </head>
 <body class="bg-slate-100 text-slate-800 antialiased h-screen flex flex-col overflow-hidden">
 
-  <!-- TOP ANNOUNCEMENT / HEADER BAR -->
+  <!-- TOP HEADER BAR (SIMPLIFIED TO DEPARTMENT OF AI ONLY) -->
   <header class="bg-slate-900 text-white shrink-0 border-b border-slate-800">
-    <div class="px-6 py-3 flex justify-between items-center">
+    <div class="px-6 py-4 flex items-center justify-between">
       <div class="flex items-center space-x-3">
-        <div class="bg-orange-600 text-white p-2 rounded-lg font-bold text-lg">DP</div>
-        <div>
-          <h1 class="font-bold text-base leading-tight">Department of Science & Tech</h1>
-          <p class="text-xs text-slate-400">File No. 1 — Department Profile Index</p>
-        </div>
-      </div>
-      <div class="flex items-center space-x-4 text-xs">
-        <span class="hidden md:inline text-slate-400">📢 Master Time Table updated as per Academic Affairs</span>
-        <a href="#" class="bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded border border-slate-700 text-slate-200 transition">Faculty Login</a>
+        <div class="bg-orange-600 text-white p-2 rounded-lg font-bold text-lg">AI</div>
+        <h1 class="font-extrabold text-xl tracking-wide uppercase text-white">Department of AI</h1>
       </div>
     </div>
   </header>
@@ -43,16 +36,15 @@
 
     <!-- LEFT SIDEBAR: ITEM INDEX LIST -->
     <aside class="w-80 md:w-96 bg-white border-r border-slate-200 flex flex-col shrink-0 shadow-sm">
-      <div class="p-4 border-b border-slate-100 bg-slate-50 flex items-center justify-between">
-        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500">Document Sections</h2>
-        <span class="text-[10px] bg-slate-200 text-slate-700 font-semibold px-2 py-0.5 rounded-full">13 Items</span>
-      </div>
 
       <!-- Navigation List -->
-      <nav class="flex-1 overflow-y-auto p-3 space-y-1" id="sidebar-menu">
+      <nav class="flex-1 overflow-y-auto p-3 space-y-1.5" id="sidebar-menu">
         
-        <!-- Section Header (Updated to HOD'S MESSAGE) -->
-        <div class="px-3 py-2 text-[11px] font-bold text-orange-600 uppercase tracking-wider">HOD'S MESSAGE</div>
+        <!-- HIGHLIGHTED SECTION 1 HEADER -->
+        <div class="my-2 p-2.5 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg text-white font-extrabold text-xs tracking-wider uppercase flex items-center gap-2 shadow-sm">
+          <i data-lucide="bookmark" class="w-4 h-4"></i>
+          <span>HOD'S MESSAGE</span>
+        </div>
 
         <button onclick="switchTab(event, 'vision-mission')" class="nav-item active text-left w-full px-3 py-2.5 rounded-lg text-xs font-semibold bg-orange-50 text-orange-600 flex items-center gap-3 transition">
           <span class="w-6 h-6 rounded bg-slate-100 text-slate-600 flex items-center justify-center shrink-0 font-semibold text-[11px]">1</span>
@@ -79,8 +71,11 @@
           <span class="truncate">Laboratory Specification</span>
         </button>
 
-        <!-- Section Header -->
-        <div class="px-3 py-2 mt-4 text-[11px] font-bold text-orange-600 uppercase tracking-wider">ANNUAL REPORT</div>
+        <!-- HIGHLIGHTED SECTION 2 HEADER (MATCHING COLOR) -->
+        <div class="mt-5 mb-2 p-2.5 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg text-white font-extrabold text-xs tracking-wider uppercase flex items-center gap-2 shadow-sm">
+          <i data-lucide="bookmark" class="w-4 h-4"></i>
+          <span>ANNUAL REPORT</span>
+        </div>
 
         <button onclick="switchTab(event, 'about-dept')" class="nav-item text-left w-full px-3 py-2.5 rounded-lg text-xs font-medium text-slate-600 flex items-center gap-3 transition">
           <span class="w-6 h-6 rounded bg-slate-100 text-slate-600 flex items-center justify-center shrink-0 font-semibold text-[11px]">6</span>
@@ -211,8 +206,8 @@
                 <tr><th class="p-4">Lab Name</th><th class="p-4">Capacity</th><th class="p-4">Equipment / Specs</th></tr>
               </thead>
               <tbody class="divide-y divide-slate-100">
-                <tr><td class="p-4 font-medium">Advanced Physics Lab</td><td class="p-4">35</td><td class="p-4">Optical Benches, Spectrometers</td></tr>
-                <tr><td class="p-4 font-medium">Organic Chemistry Lab</td><td class="p-4">30</td><td class="p-4">Fume Hoods, Distillation Units</td></tr>
+                <tr><td class="p-4 font-medium">Advanced AI & ML Lab</td><td class="p-4">35</td><td class="p-4">NVIDIA GPU Workstations, Cloud ML Racks</td></tr>
+                <tr><td class="p-4 font-medium">Robotics & Vision Lab</td><td class="p-4">30</td><td class="p-4">Computer Vision Sensors, ARM Processors</td></tr>
                 <tr><td class="p-4 font-medium">Computing Research Hub</td><td class="p-4">60</td><td class="p-4">High-End GPU Workstations</td></tr>
               </tbody>
             </table>
