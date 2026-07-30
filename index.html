@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Department Portal - Academic Profile</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-slate-900 text-white text-xs py-2 px-6 flex justify-between items-center">
+    <span>📢 Announcement: Master Time Table updated as per University Preamble for Academic Affairs.</span>
+    <div class="flex space-x-4">
+      <a href="#" class="hover:underline">Student Portal</a>
+      <a href="#" class="hover:underline">Faculty Login</a>
+    </div>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <!-- Logo / Department Title -->
+        <div class="flex items-center space-x-3">
+          <div class="bg-orange-600 text-white p-2 rounded-lg font-bold text-xl">DP</div>
+          <div>
+            <h1 class="font-bold text-lg text-slate-900 leading-tight">Department of Science & Tech</h1>
+            <p class="text-xs text-gray-500">File No. 1 — Department Profile</p>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-700">
+          <a href="#about" class="hover:text-orange-600 transition">About</a>
+          <a href="#academics" class="hover:text-orange-600 transition">Academics & Labs</a>
+          <a href="#faculty" class="hover:text-orange-600 transition">Faculty & Research</a>
+          <a href="#activities" class="hover:text-orange-600 transition">Activities</a>
+          <a href="#placements" class="hover:text-orange-600 transition">Placements</a>
+        </div>
+
+        <!-- CTA Button -->
+        <div>
+          <a href="#timetable" class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition shadow-md shadow-orange-100">
+            View Timetable
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION WITH HOD MESSAGE -->
+  <section class="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-20 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-8 space-y-6">
+        <span class="bg-orange-500/20 text-orange-400 border border-orange-500/30 text-xs px-3 py-1 rounded-full font-semibold">
+          HOD's Message & Overview
+        </span>
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+          Shaping Innovation Through Excellence in Education
+        </h2>
+        <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+          Welcome to the Department Portal. We are dedicated to delivering academic rigor, cutting-edge laboratory research, and holistic student enrichment in accordance with university standards.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#annual-report" class="bg-white text-slate-900 hover:bg-gray-100 px-6 py-3 rounded-lg text-sm font-semibold transition flex items-center gap-2">
+            <i data-lucide="file-text" class="w-4 h-4"></i> Annual Report
+          </a>
+          <a href="#admissions" class="border border-slate-600 hover:bg-slate-800 text-white px-6 py-3 rounded-lg text-sm font-semibold transition">
+            Admission Details
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Stats Card -->
+      <div class="md:col-span-4 bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10 space-y-4">
+        <h3 class="text-lg font-semibold border-b border-white/10 pb-2">Department At A Glance</h3>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-slate-300">Student Strength</span>
+            <span class="font-bold text-orange-400">450+ Active</span>
+          </div>
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-slate-300">Classrooms</span>
+            <span class="font-bold">8 Smart Rooms</span>
+          </div>
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-slate-300">Science Labs</span>
+            <span class="font-bold">6 Specialized</span>
+          </div>
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-slate-300">Approval</span>
+            <span class="font-bold text-green-400">Academic Affairs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION & MISSION -->
+  <section id="about" class="py-16 max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+        <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="eye" class="w-5 h-5"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">1. Vision</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          To evolve as a center of excellence in education and research, producing globally competent professionals equipped with ethical values and technical prowess.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+        <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="target" class="w-5 h-5"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">1. Mission</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Deliver high-quality curriculum, foster innovative faculty research, maintain state-of-the-art laboratory infrastructure, and facilitate holistic growth via extension programs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMICS, CLASSROOMS & LABS -->
+  <section id="academics" class="py-16 bg-slate-100">
+    <div class="max-w-7xl mx-auto px-6 space-y-12">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900">Infrastructure & Facilities</h2>
+        <p class="text-gray-600 text-sm mt-2">Classroom area specs, student capacity, and science lab facilities.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Classrooms Card (Item 3) -->
+        <div class="bg-white p-6 rounded-xl shadow-sm space-y-3">
+          <div class="flex items-center gap-3">
+            <i data-lucide="layout" class="text-orange-600"></i>
+            <h3 class="font-bold text-slate-900">3. Classrooms & Area</h3>
+          </div>
+          <p class="text-xs text-gray-500">Fully equipped smart classrooms designed for interactive learning.</p>
+          <ul class="text-xs space-y-2 text-gray-700">
+            <li class="flex justify-between border-b pb-1"><span>Total Area:</span> <b>12,000 sq. ft.</b></li>
+            <li class="flex justify-between border-b pb-1"><span>Seating Capacity:</span> <b>60 per room</b></li>
+            <li class="flex justify-between"><span>AV & Projectors:</span> <b>Enabled</b></li>
+          </ul>
+        </div>
+
+        <!-- Student Strength Card (Item 4) -->
+        <div class="bg-white p-6 rounded-xl shadow-sm space-y-3">
+          <div class="flex items-center gap-3">
+            <i data-lucide="users" class="text-orange-600"></i>
+            <h3 class="font-bold text-slate-900">4. Student Strength</h3>
+          </div>
+          <p class="text-xs text-gray-500">Current enrollment figures across UG & PG streams.</p>
+          <ul class="text-xs space-y-2 text-gray-700">
+            <li class="flex justify-between border-b pb-1"><span>Undergraduate:</span> <b>360 Students</b></li>
+            <li class="flex justify-between border-b pb-1"><span>Postgraduate:</span> <b>90 Students</b></li>
+            <li class="flex justify-between"><span>Research Scholars:</span> <b>15 Scholars</b></li>
+          </ul>
+        </div>
+
+        <!-- Science Labs Card (Item 5) -->
+        <div class="bg-white p-6 rounded-xl shadow-sm space-y-3">
+          <div class="flex items-center gap-3">
+            <i data-lucide="flask-conical" class="text-orange-600"></i>
+            <h3 class="font-bold text-slate-900">5. Laboratory Specs</h3>
+          </div>
+          <p class="text-xs text-gray-500">Dedicated facilities for modern scientific experiments.</p>
+          <ul class="text-xs space-y-2 text-gray-700">
+            <li class="flex justify-between border-b pb-1"><span>Advanced Physics Lab:</span> <b>Cap: 35</b></li>
+            <li class="flex justify-between border-b pb-1"><span>Organic Chemistry Lab:</span> <b>Cap: 30</b></li>
+            <li class="flex justify-between"><span>Computing Research Hub:</span> <b>60 Terminals</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACULTY, RESEARCH & ACTIVITIES -->
+  <section id="faculty" class="py-16 max-w-7xl mx-auto px-6 space-y-12">
+    <div class="text-center max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold text-slate-900">Faculty & Academic Contributions</h2>
+      <p class="text-gray-600 text-sm mt-2">Highlights from items 8, 9, 10, and 11 of the Department Profile.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white border rounded-xl p-5 hover:shadow-md transition">
+        <i data-lucide="user-check" class="text-orange-600 mb-2"></i>
+        <h4 class="font-bold text-slate-900 text-sm">8. Faculty Details</h4>
+        <p class="text-xs text-gray-500 mt-1">Experienced educators and research mentors across specialized domains.</p>
+      </div>
+
+      <div class="bg-white border rounded-xl p-5 hover:shadow-md transition">
+        <i data-lucide="award" class="text-orange-600 mb-2"></i>
+        <h4 class="font-bold text-slate-900 text-sm">9. Student Participation</h4>
+        <p class="text-xs text-gray-500 mt-1">College, Inter-Collegiate, Extension, and Department Club activities.</p>
+      </div>
+
+      <div class="bg-white border rounded-xl p-5 hover:shadow-md transition">
+        <i data-lucide="activity" class="text-orange-600 mb-2"></i>
+        <h4 class="font-bold text-slate-900 text-sm">10. Department Activities</h4>
+        <p class="text-xs text-gray-500 mt-1">Department Advisory Board (DAB), cross-cutting initiatives & alumni events.</p>
+      </div>
+
+      <div class="bg-white border rounded-xl p-5 hover:shadow-md transition">
+        <i data-lucide="book-open" class="text-orange-600 mb-2"></i>
+        <h4 class="font-bold text-slate-900 text-sm">11. Research Contribution</h4>
+        <p class="text-xs text-gray-500 mt-1">Indexed journal publications, patents filed, and sponsored grants.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MASTER TIME TABLE SECTION -->
+  <section id="timetable" class="py-16 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-6 space-y-6">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+        <div>
+          <span class="text-orange-400 text-xs font-semibold uppercase tracking-wider">Item 13</span>
+          <h2 class="text-2xl font-bold">13. Master Time Table</h2>
+          <p class="text-xs text-slate-400 mt-1">As per University preamble with the approval of Academic Affairs.</p>
+        </div>
+        <button class="mt-4 md:mt-0 bg-orange-600 hover:bg-orange-700 text-white text-xs px-4 py-2 rounded-lg transition flex items-center gap-2">
+          <i data-lucide="download" class="w-4 h-4"></i> Download Approved Schedule (PDF)
+        </button>
+      </div>
+
+      <!-- Timetable Preview Table -->
+      <div class="overflow-x-auto bg-slate-800 rounded-xl border border-slate-700">
+        <table class="w-full text-xs text-left text-slate-300">
+          <thead class="bg-slate-950 text-slate-100 uppercase text-[10px] tracking-wider border-b border-slate-700">
+            <tr>
+              <th class="py-3 px-4">Day / Period</th>
+              <th class="py-3 px-4">09:00 AM - 10:00 AM</th>
+              <th class="py-3 px-4">10:00 AM - 11:00 AM</th>
+              <th class="py-3 px-4">11:15 AM - 12:15 PM</th>
+              <th class="py-3 px-4">02:00 PM - 04:00 PM</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-700">
+            <tr>
+              <td class="py-3 px-4 font-bold text-orange-400">Monday</td>
+              <td class="py-3 px-4">Lecture (L1)</td>
+              <td class="py-3 px-4">Core Theory</td>
+              <td class="py-3 px-4">Elective Sub</td>
+              <td class="py-3 px-4">Lab Practical Batch A</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-bold text-orange-400">Tuesday</td>
+              <td class="py-3 px-4">Core Theory</td>
+              <td class="py-3 px-4">Tutorial</td>
+              <td class="py-3 px-4">Lecture (L2)</td>
+              <td class="py-3 px-4">Lab Practical Batch B</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+      <div class="space-y-3">
+        <h4 class="text-white font-bold text-sm">Department Portal</h4>
+        <p class="leading-relaxed">Maintaining standards in education, research, and institutional quality.</p>
+      </div>
+      <div>
+        <h5 class="text-white font-semibold mb-3">Quick Navigation</h5>
+        <ul class="space-y-2">
+          <li><a href="#about" class="hover:text-white">Vision & Mission</a></li>
+          <li><a href="#annual-report" class="hover:text-white">Annual Report</a></li>
+          <li><a href="#placements" class="hover:text-white">Placements (Item 12)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-white font-semibold mb-3">Compliance</h5>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-white">Academic Affairs Approval</a></li>
+          <li><a href="#" class="hover:text-white">University Preamble</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-white font-semibold mb-3">Contact</h5>
+        <p>HOD Office, Department Building</p>
+        <p class="mt-1">Email: hod.dept@university.edu</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 mt-8 pt-6 border-t border-slate-800 text-center text-slate-600">
+      © Department Profile — All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Initialize Lucide Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
