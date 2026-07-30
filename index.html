@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Department Profile</title>
+  <title>Department Portal - Dynamic Profile Viewer</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons CDN -->
@@ -45,7 +45,7 @@
     <aside class="w-80 md:w-96 bg-white border-r border-slate-200 flex flex-col shrink-0 shadow-sm">
       <div class="p-4 border-b border-slate-100 bg-slate-50 flex items-center justify-between">
         <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500">Document Sections</h2>
-        <span class="text-[10px] bg-slate-200 text-slate-700 font-semibold px-2 py-0.5 rounded-full">13 Items</span>
+        <span class="text-[10px] bg-slate-200 text-slate-700 font-semibold px-2 py-0.5 rounded-full">14 Sections</span>
       </div>
 
       <!-- Navigation List -->
@@ -54,9 +54,9 @@
         <!-- Section Header -->
         <div class="px-3 py-2 text-[11px] font-bold text-orange-600 uppercase tracking-wider">Overview & Infrastructure</div>
 
-        <button onclick="switchTab('hod-message')" class="nav-item active text-left w-full px-3 py-2.5 rounded-lg text-xs font-medium flex items-center gap-3 transition">
+        <button onclick="switchTab('overview-infra')" class="nav-item active bg-orange-50 text-orange-600 font-semibold text-left w-full px-3 py-2.5 rounded-lg text-xs flex items-center gap-3 transition">
           <span class="w-6 h-6 rounded bg-slate-100 text-slate-600 flex items-center justify-center shrink-0 font-semibold text-[11px]">—</span>
-          <span class="truncate">HOD's Message</span>
+          <span class="truncate">Overview & Infrastructure</span>
         </button>
 
         <button onclick="switchTab('vision-mission')" class="nav-item text-left w-full px-3 py-2.5 rounded-lg text-xs font-medium flex items-center gap-3 transition">
@@ -134,17 +134,37 @@
     <main class="flex-1 overflow-y-auto p-6 md:p-10 bg-slate-50">
       <div class="max-w-4xl mx-auto">
 
-        <!-- CONTENT ITEM: HOD MESSAGE -->
-        <div id="content-hod-message" class="content-panel space-y-6">
+        <!-- CONTENT ITEM: OVERVIEW & INFRASTRUCTURE -->
+        <div id="content-overview-infra" class="content-panel space-y-6">
           <div class="border-b border-gray-200 pb-4">
-            <span class="text-xs font-semibold text-orange-600 uppercase tracking-wider">Remarks</span>
-            <h2 class="text-2xl font-bold text-slate-900 mt-1">HOD's Message</h2>
+            <span class="text-xs font-semibold text-orange-600 uppercase tracking-wider">Department Summary</span>
+            <h2 class="text-2xl font-bold text-slate-900 mt-1">Overview & Infrastructure</h2>
           </div>
-          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
             <h3 class="text-xl font-bold text-slate-800">Shaping Innovation Through Excellence in Education</h3>
             <p class="text-slate-600 text-sm leading-relaxed">
               Welcome to the Department Portal. We are dedicated to delivering academic rigor, cutting-edge laboratory research, and holistic student enrichment in accordance with university standards.
             </p>
+            
+            <!-- Quick Glance Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2">
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                <span class="text-xs text-slate-500">Active Students</span>
+                <p class="text-lg font-bold text-orange-600 mt-0.5">450+</p>
+              </div>
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                <span class="text-xs text-slate-500">Classrooms</span>
+                <p class="text-lg font-bold text-slate-900 mt-0.5">8 Smart Rooms</p>
+              </div>
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                <span class="text-xs text-slate-500">Science Labs</span>
+                <p class="text-lg font-bold text-slate-900 mt-0.5">6 Specialized</p>
+              </div>
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                <span class="text-xs text-slate-500">Status</span>
+                <p class="text-lg font-bold text-green-600 mt-0.5">Approved</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -367,31 +387,33 @@
 
   <!-- JAVASCRIPT FOR INTERACTIVE TABS -->
   <script>
-    // Initialize icons
+    // Initialize Lucide Icons
     lucide.createIcons();
 
     // Tab switcher logic
     function switchTab(tabId) {
-      // Hide all panels
+      // Hide all content panels
       document.querySelectorAll('.content-panel').forEach(panel => {
         panel.classList.add('hidden');
       });
 
-      // Show selected panel
+      // Show targeted content panel
       const targetPanel = document.getElementById('content-' + tabId);
       if (targetPanel) {
         targetPanel.classList.remove('hidden');
       }
 
-      // Update sidebar styles
+      // Reset menu button active styles
       document.querySelectorAll('.nav-item').forEach(button => {
         button.classList.remove('bg-orange-50', 'text-orange-600', 'font-semibold');
-        button.classList.add('text-slate-600');
+        button.classList.add('text-slate-600', 'font-medium');
       });
 
-      // Highlight active button
-      event.currentTarget.classList.add('bg-orange-50', 'text-orange-600', 'font-semibold');
-      event.currentTarget.classList.remove('text-slate-600');
+      // Apply active style to clicked button
+      if (event && event.currentTarget) {
+        event.currentTarget.classList.add('bg-orange-50', 'text-orange-600', 'font-semibold');
+        event.currentTarget.classList.remove('text-slate-600', 'font-medium');
+      }
     }
   </script>
 
